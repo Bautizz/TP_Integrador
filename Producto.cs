@@ -2,12 +2,10 @@ using System;
 
 public class Producto
 {
-    
     public string Nombre { get; private set; }
     public decimal Precio { get; private set; }
     public int Stock { get; private set; }
 
-    
     public Producto(string nombre, decimal precio, int stock)
     {
         Nombre = nombre;
@@ -15,7 +13,6 @@ public class Producto
         Stock = stock;
     }
 
-   
     public bool DescontarStock(int cantidad)
     {
         if (cantidad > 0 && Stock >= cantidad)
@@ -24,5 +21,14 @@ public class Producto
             return true;
         }
         return false;
+    }
+
+    
+    public void DevolverStock(int cantidad)
+    {
+        if (cantidad > 0)
+        {
+            Stock += cantidad;
+        }
     }
 }
